@@ -38,9 +38,9 @@ def initialize_django():
     os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
     # This is for setting up django
-    from django.conf import settings
+    from django.apps import apps
 
-    if settings.configured:
-        pass
+    if apps.ready:
+        print("Django is already initialized.")
     else:
         django.setup()
