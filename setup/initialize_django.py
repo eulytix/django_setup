@@ -4,12 +4,6 @@ def initialize_django():
     import sys, os, django
     from django.conf import settings
 
-    if settings.configured:
-        print("Django already configured..")
-        pass
-    else:
-        print("Configuring Django")
-        django.setup()
 
     
     def find_base_directory(starting_path='.'):
@@ -46,3 +40,9 @@ def initialize_django():
     os.environ["DJANGO_ALLOW_ASYNC_UNSAFE"] = "true"
 
     # This is for setting up django
+    if settings.configured:
+        print("Django already configured..")
+        pass
+    else:
+        print("Configuring Django")
+        django.setup()
